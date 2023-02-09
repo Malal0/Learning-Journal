@@ -1,9 +1,172 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
+/*/////////////////////////////
+            GLOBAL
+/////////////////////////////*/
 
 html,
 body {
-    margin: 0;
-    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: 1em 1.25em;
+}
+
+button {
+    cursor: pointer;
+}
+
+time {
+    text-transform: uppercase;
+}
+
+footer {
+    background-color: #202020;
+    color: #ececec;
+    padding: 2.3125em 0;
+    text-align: center;
+}
+
+/*/////////////////////////////
+        NAV CLASSES
+/////////////////////////////*/
+
+.logo-img {
+    height: 1.5em;
+    margin-right: .5em;
+}
+
+.logo-txt {
+    font-size: .85rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.nav-links-container {
+    margin-left: auto;
+    display: flex;
+    gap: 2em;
+}
+
+.nav-links-container li {
+    list-style-type: none;
+}
+
+.nav-link-tab {
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+/*/////////////////////////////
+        HERO CLASSES
+/////////////////////////////*/
+
+.hero {
+    background-image: url(/images/article-image-hero.svg);
+    color: #fff;
+    display: flex;
+    height: 18.3125em;
+}
+
+.hero-container {
+    display: grid;
+    grid-gap: .5em;
+    margin-top: auto;
+    margin-bottom: 1.25em;
+}
+
+.hero-date {
+    font-size: .75rem;
+}
+
+.hero-title {
+    font-size: 2rem;
+}
+
+/*/////////////////////////////
+        POSTS CLASSES
+/////////////////////////////*/
+
+.posts-container {
+    display: grid;
+    grid-gap: 2.5em;
+    margin: 2.125em 0;
+}
+
+.post {
+    display: grid;
+    grid-gap: .75em;
+
+}
+
+.post-image {
+    border-radius: .25em;
+    width: 100%;
+}
+
+.post-date {
+    font-size: .886rem;
+}
+
+.post-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.post-subtext {
+    color: #505050;
+}
+
+.view-more-btn {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: 700;
+    width: fit-content;
+    margin: auto;
+}
+
+/*/////////////////////////////
+        FOOTER CLASSES
+/////////////////////////////*/
+
+.footer-title {
+    color: #ECECEC;
+    font-weight: 600;
+}
+
+.footer-copyright {
+    color: #D7D7D7;
+}
+
+
+/*/////////////////////////////
+UTILITY CLASSES
+/////////////////////////////*/
+
+.container {
+    width: calc(100% - 2em);
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.hidden {
+    display: none;
+}
+
+.border {
+    border: 1px solid red;
 }
