@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    transition: 300ms;
 }
 
 /*/////////////////////////////
@@ -16,7 +17,7 @@ body {
 nav {
     display: flex;
     align-items: center;
-    padding: 1em 1.25em;
+    padding: 1em 0;
 }
 
 button {
@@ -74,9 +75,12 @@ footer {
 
 .hero {
     background-image: url(/images/article-image-hero.svg);
+    background-position: center;
+    background-size: cover;
     color: #fff;
     display: flex;
     height: 18.3125em;
+    transition: 300ms;
 }
 
 .hero-container {
@@ -100,14 +104,14 @@ footer {
 
 .posts-container {
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(309px, 1fr));
     grid-gap: 2.5em;
-    margin: 2.125em 0;
+    margin: 2.125em 0 2.69em 0;
 }
 
 .post {
     display: grid;
     grid-gap: .75em;
-
 }
 
 .post-image {
@@ -135,6 +139,7 @@ footer {
     font-family: inherit;
     font-size: 1em;
     font-weight: 700;
+    grid-column: 1 / -1;
     width: fit-content;
     margin: auto;
 }
@@ -169,4 +174,30 @@ UTILITY CLASSES
 
 .border {
     border: 1px solid red;
+}
+
+@media(min-width: 480px) {
+    .hero {
+        height: 22.5em;
+    }
+
+    .hero-container {
+        margin-bottom: 2em;
+    }
+}
+
+@media(min-width: 1020px) {
+    .hero {
+        height: 30.5em;
+    }
+
+    .hero-container {
+        margin-bottom: 3.75em;
+    }
+
+    .container {
+        width: clamp(700px, 95%, 1120px);
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
