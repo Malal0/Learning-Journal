@@ -35,6 +35,13 @@ time {
     text-transform: uppercase;
 }
 
+h2,
+h3,
+h4 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
 footer {
     background-color: #202020;
     color: #ececec;
@@ -81,21 +88,12 @@ footer {
         HERO CLASSES
 /////////////////////////////*/
 
-.hero {
-    background-image: url(/images/article-image-hero.svg);
-    background-position: center;
-    background-size: cover;
-    color: #fff;
-    display: flex;
-    height: 18.3125em;
-    transition: 300ms;
-}
+/* .hero {} */
 
 .hero-container {
     display: grid;
-    grid-gap: .5em;
-    margin-top: auto;
-    margin-bottom: 1.25em;
+    grid-gap: 1em;
+    margin-top: 32px;
 }
 
 .hero-date {
@@ -106,8 +104,18 @@ footer {
     font-size: 2rem;
 }
 
-.hero-title a {
-    color: #fff;
+.hero-image {
+    margin: 12px 0 35px 0;
+    width: 100%;
+}
+
+/*/////////////////////////////
+        MAIN CLASSES
+/////////////////////////////*/
+
+.main {
+    display: grid;
+    grid-gap: 1em;
 }
 
 /*/////////////////////////////
@@ -119,6 +127,11 @@ footer {
     grid-template-columns: repeat(auto-fill, minmax(309px, 1fr));
     grid-gap: 2.5em;
     margin: 2.125em 0 2.69em 0;
+}
+
+.posts-title {
+    text-align: center;
+    grid-column: 1 / -1;
 }
 
 .post {
@@ -137,7 +150,6 @@ footer {
 
 .post-title {
     font-size: 1.25rem;
-    font-weight: 700;
 }
 
 .post-subtext {
@@ -189,23 +201,23 @@ UTILITY CLASSES
 }
 
 @media(min-width: 480px) {
-    .hero {
+    /* .hero {
         height: 22.5em;
     }
 
     .hero-container {
         margin-bottom: 2em;
-    }
+    } */
 }
 
 @media(min-width: 1020px) {
-    .hero {
+    /* .hero {
         height: 30.5em;
     }
 
     .hero-container {
         margin-bottom: 3.75em;
-    }
+    } */
 
     .container {
         width: clamp(700px, 95%, 1120px);
