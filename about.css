@@ -83,6 +83,10 @@ footer {
     font-size: .9rem;
 }
 
+.nav-link-tab:hover {
+    color: hsl(122, 35%, 55%);
+}
+
 
 /*/////////////////////////////
         HERO CLASSES

@@ -76,6 +76,10 @@ footer {
     font-size: .9rem;
 }
 
+.nav-link-tab:hover {
+    color: hsl(122, 35%, 55%);
+}
+
 
 /*/////////////////////////////
         HERO CLASSES
@@ -108,6 +112,11 @@ footer {
 
 .hero-title a {
     color: #fff;
+}
+
+.hero-title a:hover {
+    /* color: hsl(121, 100%, 75%); */
+    color: hsl(122, 35%, 55%);
 }
 
 /*/////////////////////////////
@@ -154,6 +163,10 @@ footer {
     grid-column: 1 / -1;
     width: fit-content;
     margin: auto;
+}
+
+.view-more-btn:hover {
+    color: hsl(122, 35%, 55%);
 }
 
 /*/////////////////////////////
