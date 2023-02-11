@@ -105,7 +105,9 @@ footer {
 }
 
 .hero-image {
+    aspect-ratio: 2;
     margin: 12px 0 35px 0;
+    object-fit: cover;
     width: 100%;
 }
 
@@ -200,28 +202,15 @@ UTILITY CLASSES
     border: 1px solid red;
 }
 
-@media(min-width: 480px) {
-    /* .hero {
-        height: 22.5em;
-    }
-
-    .hero-container {
-        margin-bottom: 2em;
-    } */
-}
-
 @media(min-width: 1020px) {
-    /* .hero {
-        height: 30.5em;
-    }
-
-    .hero-container {
-        margin-bottom: 3.75em;
-    } */
-
     .container {
         width: clamp(700px, 95%, 1120px);
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .blog-content {
+        width: clamp(700px, 100%, 1000px);
+        margin: auto;
     }
 }
