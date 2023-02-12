@@ -1,7 +1,7 @@
 //////////////////////////////
 //    VARIABLES
 //////////////////////////////
-const hiddenPosts = document.querySelectorAll('div[class="post hidden"]');
+const hiddenPosts = document.querySelectorAll('article[class="post hidden"]');
 const viewMoreBtn = document.querySelector('.view-more-btn');
 
 //////////////////////////////

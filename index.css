@@ -35,6 +35,13 @@ time {
     text-transform: uppercase;
 }
 
+h2,
+h3,
+h4 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
 footer {
     background-color: #202020;
     color: #ececec;
@@ -89,16 +96,20 @@ footer {
     background-image: url(/images/article-image-hero.svg);
     background-position: center;
     background-size: cover;
-    color: #fff;
     display: flex;
     height: 18.3125em;
     transition: 300ms;
 }
 
+.hero a {
+    display: block;
+    margin-top: auto;
+}
+
 .hero-container {
+    color: #fff;
     display: grid;
     grid-gap: .5em;
-    margin-top: auto;
     margin-bottom: 1.25em;
 }
 
@@ -120,6 +131,59 @@ footer {
 }
 
 /*/////////////////////////////
+        BLOG HERO CLASSES
+/////////////////////////////*/
+
+.blog-hero-container {
+    display: grid;
+    grid-gap: 1em;
+    margin-top: 32px;
+}
+
+.blog-hero-image {
+    aspect-ratio: 2;
+    margin: 12px 0 35px 0;
+    object-fit: cover;
+    width: 100%;
+}
+
+.blog-main {
+    display: grid;
+    grid-gap: 1em;
+}
+
+/*/////////////////////////////
+        ABOUT HERO CLASSES
+/////////////////////////////*/
+
+.about-hero {
+    margin-bottom: 3.125em;
+}
+
+.about-hero-container {
+    display: grid;
+    grid-gap: 1em;
+    margin-top: 32px;
+}
+
+.about-hero-image {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    margin: 1.26em 0;
+    object-fit: cover;
+    width: 11.375em;
+}
+
+/*/////////////////////////////
+        MAIN CLASSES
+/////////////////////////////*/
+
+.main {
+    display: grid;
+    grid-gap: 1em;
+}
+
+/*/////////////////////////////
         POSTS CLASSES
 /////////////////////////////*/
 
@@ -128,6 +192,11 @@ footer {
     grid-template-columns: repeat(auto-fill, minmax(309px, 1fr));
     grid-gap: 2.5em;
     margin: 2.125em 0 2.69em 0;
+}
+
+.posts-title {
+    text-align: center;
+    grid-column: 1 / -1;
 }
 
 .post {
@@ -224,5 +293,10 @@ UTILITY CLASSES
         width: clamp(700px, 95%, 1120px);
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .blog-content {
+        width: clamp(700px, 100%, 1000px);
+        margin: auto;
     }
 }
