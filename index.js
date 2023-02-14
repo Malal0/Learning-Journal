@@ -2,12 +2,10 @@
 //    VARIABLES
 //////////////////////////////
 import { articles } from "/data.js"
-console.log(articles);
 const postContainer = document.querySelector('.posts-container');
 const posts = postContainer.children;
 const viewMoreBtn = document.querySelector('.view-more-btn');
 let nums = randomNonrepeatingNumbers(3);
-// hideSomePosts();
 const hiddenPosts = document.querySelectorAll('a[class="hidden"]');
 
 //////////////////////////////
@@ -34,8 +32,6 @@ function randomNonrepeatingNumbers(length) {
 }
 
 function hideSomePosts() {
-    console.log(nums);
-
     for (let i = 0; i < nums.length; i++) {
         posts[nums[i]].classList.add("hidden")
     }
@@ -65,3 +61,10 @@ postContainer.innerHTML = articles.map(article => `
 </article>
 </a>
 `).join('');
+
+//////////////////////////////
+//    HIDE SOME ARTICLES
+//////////////////////////////
+
+console.log(posts);
+// hideSomePosts();
