@@ -5,7 +5,7 @@ import { articles } from "/data.js"
 const postContainer = document.querySelector('.posts-container');
 const posts = postContainer.children;
 const viewMoreBtn = document.querySelector('.view-more-btn');
-let nums = randomNonrepeatingNumbers(3);
+let nums = randomNonrepeatingNumbers(6);
 // const hiddenPosts = document.querySelectorAll('a[class="hidden"]');
 
 //////////////////////////////
@@ -33,9 +33,7 @@ function randomNonrepeatingNumbers(length) {
 
 function hideSomePosts() {
     for (let i = 0; i < nums.length; i++) {
-        // posts[nums[i]].classList.add("hidden");
         posts[nums[i]].classList.add("hidden");
-        console.log(posts[nums[i]].classList);
     }
 }
 
@@ -51,7 +49,12 @@ if (viewMoreBtn) {
 //////////////////////////////
 //    RENDER ARTICLES
 //////////////////////////////
-postContainer.innerHTML = articles.map(article => `
+const exclude = document.body.dataset.exclude;
+const filteredArticles = articles.filter(article => article.title !== exclude);
+const randomizedArticles = nums.map(num => filteredArticles[num]);
+console.log(randomizedArticles);
+
+postContainer.innerHTML = randomizedArticles.map(article => `
 <a href="${article.link}" target="_self">
 <article class="post">
     <img class="post-image" alt="post image" src="images/${article.image}" />
@@ -69,4 +72,4 @@ postContainer.innerHTML = articles.map(article => `
 //////////////////////////////
 
 // console.log(posts);
-hideSomePosts();
+// hideSomePosts();
