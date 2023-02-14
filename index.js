@@ -6,7 +6,6 @@ const postContainer = document.querySelector('.posts-container');
 const posts = postContainer.children;
 const viewMoreBtn = document.querySelector('.view-more-btn');
 let nums = randomNonrepeatingNumbers(6);
-// const hiddenPosts = document.querySelectorAll('a[class="hidden"]');
 
 //////////////////////////////
 //    FUNCTIONS
@@ -32,8 +31,9 @@ function randomNonrepeatingNumbers(length) {
 }
 
 function hideSomePosts() {
-    for (let i = 0; i < nums.length; i++) {
-        posts[nums[i]].classList.add("hidden");
+    for (let i = 3; i < randomizedArticles.length; i++) {
+        console.log(posts[i])
+        posts[i].classList.add("hidden");
     }
 }
 
@@ -72,4 +72,5 @@ postContainer.innerHTML = randomizedArticles.map(article => `
 //////////////////////////////
 
 // console.log(posts);
-// hideSomePosts();
+hideSomePosts();
+const hiddenPosts = document.querySelectorAll('a[class="hidden"]');
