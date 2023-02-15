@@ -99,6 +99,7 @@ footer {
     display: flex;
     height: 18.3125em;
     transition: 300ms;
+    text-shadow: 0 0 .2em black;
 }
 
 .hero a {
@@ -125,8 +126,8 @@ footer {
     color: #fff;
 }
 
-.hero-title a:hover {
-    /* color: hsl(121, 100%, 75%); */
+.hero-title a:hover,
+.view-more-btn:hover {
     color: hsl(122, 35%, 55%);
 }
 
@@ -188,6 +189,10 @@ footer {
         POSTS CLASSES
 /////////////////////////////*/
 
+.posts-section {
+    margin: 2.7em 0;
+}
+
 .posts-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(309px, 1fr));
@@ -235,10 +240,6 @@ footer {
     font-weight: 700;
     margin: auto;
     width: fit-content;
-}
-
-.view-more-btn:hover {
-    color: hsl(122, 35%, 55%);
 }
 
 /*/////////////////////////////
