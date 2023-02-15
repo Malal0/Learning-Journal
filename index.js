@@ -51,19 +51,22 @@ if (viewMoreBtn) {
 //////////////////////////////
 const exclude = document.body.dataset.exclude;
 const filteredArticles = articles.filter(article => article.title !== exclude);
-const randomizedArticles = nums.map(num => filteredArticles[num]);
-console.log(randomizedArticles);
+// const randomizedArticles = nums.map(num => filteredArticles[num]);
+const randomizedArticles = [];
+for (let i = 0; i < filteredArticles.length; i++) {
+    nums[i] < 7 ? randomizedArticles.push(filteredArticles[nums[i]]) : randomizedArticles.push(filteredArticles[6])
+}
 
 postContainer.innerHTML = randomizedArticles.map(article => `
 <a href="${article.link}" target="_self">
-<article class="post">
-    <img class="post-image" alt="post image" src="images/${article.image}" />
-    <time class="post-date" date="2023-02-23">february 23, 2023</time>
-    <h2 class="post-title">${article.title}</h2>
-    <p class="post-subtext">I'm excited to start a new learning journey as a Scrimba Bootcamp student!
-        After
-        several months of learning in the Frontend Developer Career Path.</p>
-</article>
+    <article class="post">
+        <img class="post-image" alt="post image" src="images/${article.image}" />
+        <time class="post-date" date="2023-02-23">february 23, 2023</time>
+        <h2 class="post-title">${article.title}</h2>
+        <p class="post-subtext">I'm excited to start a new learning journey as a Scrimba Bootcamp student!
+            After
+            several months of learning in the Frontend Developer Career Path.</p>
+    </article>
 </a>
 `).join('');
 
@@ -71,6 +74,5 @@ postContainer.innerHTML = randomizedArticles.map(article => `
 //    HIDE SOME ARTICLES
 //////////////////////////////
 
-// console.log(posts);
 hideSomePosts();
 const hiddenPosts = document.querySelectorAll('a[class="hidden"]');
