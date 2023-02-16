@@ -5,8 +5,8 @@
 }
 
 .darkmode {
-    --bg: rgb(27, 27, 27);
-    --text: rgb(246, 246, 246);
+    --bg: #1b1b1b;
+    --text: #f6f6f6;
     --subtext: #959595;
 }
 
