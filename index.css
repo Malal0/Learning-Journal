@@ -122,6 +122,10 @@ footer {
 
 /*show menu nav*/
 .show-menu {
+    box-shadow: 0 0 8px black;
+}
+
+.show-menu .nav {
     display: grid;
 }
 
@@ -153,7 +157,6 @@ footer {
     background-size: cover;
     display: flex;
     height: 18.3125em;
-    transition: 300ms;
     text-shadow: 0 0 .2em black;
 }
 
@@ -164,7 +167,6 @@ footer {
 
 .hero-container {
     color: #fff;
-    /* color: var(--text); */
     display: grid;
     grid-gap: .5em;
     margin-bottom: 1.25em;
@@ -294,8 +296,16 @@ footer {
     width: fit-content;
 }
 
+.nav-link:hover,
+.nav-link:focus,
+.menu-btn:hover,
+a:hover .post-title,
 .view-more-btn:hover {
     color: hsl(122, 35%, 55%);
+}
+
+.fa-solid {
+    pointer-events: none;
 }
 
 /*/////////////////////////////
@@ -333,12 +343,16 @@ UTILITY CLASSES
     background-color: transparent;
     border: 2px solid;
     border-radius: .75em;
-    color: var(--headerC);
+    color: var(--text);
     display: grid;
 }
 
+.toggle-darkmode-btn:hover {
+    border: 2px solid hsl(122, 35%, 55%);
+    color: hsl(122, 35%, 55%);
+}
+
 .toggle-darkmode-btn>* {
-    pointer-events: none;
     grid-column: 1;
     grid-row: 1;
     padding: .5em;

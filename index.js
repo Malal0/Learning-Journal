@@ -11,8 +11,19 @@ const sortedArticles = filteredArticles.sort((a, b) => {
     const bDate = new Date(b.date);
     return aDate < bDate
 });
+let darkmode = false;
 
-const darkModeBtn = document.getElementById("toggle-darkmode-btn");
+//////////////////////////////
+//    CHECK USER PREF
+//////////////////////////////
+//window.matchMedia("(prefers-color-scheme:dark)").matches
+if (localStorage.getItem("darkmode")) {
+    darkmode = JSON.parse(localStorage.getItem("darkmode"));
+}
+
+if (darkmode) {
+    document.body.classList.add("darkmode");
+}
 
 //////////////////////////////
 //    RENDER RECENT POSTS
@@ -41,9 +52,15 @@ hideLastPosts();
 //    FUNCTIONS
 //////////////////////////////
 
-// function handleClick() {
-//     toggleHiddenPosts();
-// }
+function handleClick(e) {
+    if (e.target.id === "toggle-darkmode-btn") {
+        toggleDarkMode();
+    } else if (e.target.id === "menu-btn") {
+        document.querySelector("nav").classList.toggle("show-menu");
+    } else if (e.target.id === "view-more-btn") {
+        toggleHiddenPosts();
+    }
+}
 
 function toggleHiddenPosts() {
     for (let i = 3; i < filteredArticles.length; i++) {
@@ -60,18 +77,20 @@ function hideLastPosts() {
 }
 
 function toggleDarkMode() {
-    document.body.classList.toggle("darkmode");
+    darkmode = !darkmode;
+    document.body.classList.toggle("darkmode", darkmode);
+    localStorage.setItem("darkmode", `${darkmode}`);
 }
 
+function updateLocalStorage() {
+    // if (!localStorage.getItem("darkmode")) {
+    //     localStorage.setItem("darkmode", `${darkmode}`)
+    // }else{
+
+    // }
+}
 //////////////////////////////
 //    EVENT LISTENER
 //////////////////////////////
 
-// viewMoreBtn.addEventListener("click", handleClick);
-viewMoreBtn.addEventListener("click", toggleHiddenPosts);
-
-darkModeBtn.addEventListener("click", toggleDarkMode);
-
-document.getElementById("menu-btn").addEventListener("click", () => {
-    document.querySelector(".nav").classList.toggle("show-menu");
-});
+document.addEventListener("click", handleClick);
