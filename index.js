@@ -12,6 +12,8 @@ const sortedArticles = filteredArticles.sort((a, b) => {
     return aDate < bDate
 });
 
+const darkModeBtn = document.getElementById("toggle-darkmode-btn");
+
 //////////////////////////////
 //    RENDER RECENT POSTS
 //////////////////////////////
@@ -57,9 +59,19 @@ function hideLastPosts() {
     }
 }
 
+function toggleDarkMode() {
+    document.body.classList.toggle("darkmode");
+}
+
 //////////////////////////////
 //    EVENT LISTENER
 //////////////////////////////
 
 // viewMoreBtn.addEventListener("click", handleClick);
 viewMoreBtn.addEventListener("click", toggleHiddenPosts);
+
+darkModeBtn.addEventListener("click", toggleDarkMode);
+
+document.getElementById("menu-btn").addEventListener("click", () => {
+    document.querySelector(".nav").classList.toggle("show-menu");
+});

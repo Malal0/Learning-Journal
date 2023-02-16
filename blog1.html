@@ -11,6 +11,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Learning Journal</title>
     <link rel="icon" href="/images/logo.svg" type="image/icon type">
     <link rel="stylesheet" href="/index.css">
@@ -21,21 +24,32 @@
     <!--header-->
     <header>
         <!--nav-->
-        <nav class="container">
-            <img src="images/logo.svg" alt="logo" class="logo-img" />
-            <p class="logo-txt">My learning journal</p>
-            <!--tabs-->
-            <ul class="nav-links-container">
-                <li>
-                    <a class="nav-link-tab" href="/index.html" target="_self">home</a>
-                </li>
-                <li>
-                    <a class="nav-link-tab" href="/about.html" target="_self">about me</a>
-                </li>
-            </ul>
+        <nav>
+            <div class="nav container">
+                <div class="logo-container">
+                    <img src="images/logo.svg" alt="logo" class="logo-img" />
+                    <p class="logo-txt">My learning journal</p>
+                </div>
+                <!--tabs-->
+                <ul class="nav-links-container">
+                    <li>
+                        <a class="nav-link" href="/index.html" target="_self">home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="/about.html" target="_self">about me</a>
+                    </li>
+                    <button class="toggle-darkmode-btn" id="toggle-darkmode-btn">
+                        <i class="fa-solid fa-moon"></i>
+                        <i class="fa-solid fa-sun"></i>
+                    </button>
+                </ul>
+                <button class="menu-btn" id="menu-btn">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+            </div>
         </nav>
         <!--hero section-->
-        <section class="">
+        <section>
             <div class="blog-hero-container container">
                 <time class="hero-date blog-content" date="2020-09-14">September 14, 2020</time>
                 <h1 class="hero-title blog-content">Blog one</h1>

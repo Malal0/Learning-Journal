@@ -1,3 +1,15 @@
+:root {
+    --bg: white;
+    --text: black;
+    --subtext: #505050;
+}
+
+.darkmode {
+    --bg: rgb(27, 27, 27);
+    --text: rgb(246, 246, 246);
+    --subtext: #959595;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,17 +24,23 @@
 html,
 body {
     font-family: 'Source Sans Pro', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+header {
+    margin-top: 59px;
 }
 
 nav {
-    display: flex;
-    align-items: center;
-    justify-content: baseline;
-    padding: 1em 0;
+    background-color: var(--bg);
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 a {
-    color: #000;
+    color: var(--text);
     text-decoration: none;
 }
 
@@ -53,6 +71,17 @@ footer {
         NAV CLASSES
 /////////////////////////////*/
 
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 1em 0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
 .logo-img {
     height: 1.5em;
     margin-right: .5em;
@@ -65,16 +94,17 @@ footer {
 }
 
 .nav-links-container {
-    margin-left: auto;
-    display: flex;
+    display: none;
+    align-items: center;
     gap: 2em;
+    margin-left: auto;
 }
 
 .nav-links-container li {
     list-style-type: none;
 }
 
-.nav-link-tab {
+.nav-link {
     background: transparent;
     border: none;
     font-family: inherit;
@@ -83,10 +113,35 @@ footer {
     font-size: .9rem;
 }
 
-.nav-link-tab:hover {
-    color: hsl(122, 35%, 55%);
+.menu-btn {
+    background-color: transparent;
+    border: none;
+    color: var(--text);
+    margin-left: auto;
 }
 
+/*show menu nav*/
+.show-menu {
+    display: grid;
+}
+
+.show-menu .logo-container {
+    grid-column: 1 / -1;
+    grid-row: 1;
+}
+
+.show-menu .nav-links-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 1em;
+}
+
+.show-menu .menu-btn {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    transform: rotate(-270deg);
+}
 
 /*/////////////////////////////
         HERO CLASSES
@@ -109,6 +164,7 @@ footer {
 
 .hero-container {
     color: #fff;
+    /* color: var(--text); */
     display: grid;
     grid-gap: .5em;
     margin-bottom: 1.25em;
@@ -122,15 +178,6 @@ footer {
     font-size: 2rem;
 }
 
-.hero-title a {
-    color: #fff;
-}
-
-.hero-title a:hover,
-.view-more-btn:hover {
-    color: hsl(122, 35%, 55%);
-}
-
 /*/////////////////////////////
         BLOG HERO CLASSES
 /////////////////////////////*/
@@ -138,7 +185,6 @@ footer {
 .blog-hero-container {
     display: grid;
     grid-gap: 1em;
-    margin-top: 32px;
 }
 
 .blog-hero-image {
@@ -173,6 +219,11 @@ footer {
     margin: 1.26em 0;
     object-fit: cover;
     width: 11.375em;
+}
+
+.blog-hero-container,
+.about-hero-container {
+    padding-top: 2em;
 }
 
 /*/////////////////////////////
@@ -227,19 +278,24 @@ footer {
 }
 
 .post-subtext {
-    color: #505050;
+    color: var(--subtext);
 }
 
 .view-more-btn {
     background: transparent;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--text);
+    color: var(--text);
     display: block;
     font-family: inherit;
     font-size: 1em;
     font-weight: 700;
     margin: auto;
     width: fit-content;
+}
+
+.view-more-btn:hover {
+    color: hsl(122, 35%, 55%);
 }
 
 /*/////////////////////////////
@@ -270,8 +326,39 @@ UTILITY CLASSES
     display: none;
 }
 
-.border {
-    border: 1px solid red;
+/*/////////////////////
+    TOGGLE DARKMODE
+/////////////////////*/
+.toggle-darkmode-btn {
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: .75em;
+    color: var(--headerC);
+    display: grid;
+}
+
+.toggle-darkmode-btn>* {
+    pointer-events: none;
+    grid-column: 1;
+    grid-row: 1;
+    padding: .5em;
+}
+
+.fa-sun,
+.darkmode .fa-moon {
+    opacity: 0;
+}
+
+.fa-moon,
+.darkmode .fa-sun {
+    opacity: 1;
+}
+
+/*menu icon*/
+
+.fa-ellipsis-vertical {
+    padding: .25em;
+    font-size: 1.125rem;
 }
 
 @media(min-width: 480px) {
@@ -285,6 +372,37 @@ UTILITY CLASSES
 }
 
 @media(min-width: 1020px) {
+
+    /*/////////////////////////////
+        NAV CLASSES
+/////////////////////////////*/
+
+    .logo-container {
+        /* border: 1px solid orange; */
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-img {
+        height: 1.5em;
+        margin-right: .5em;
+    }
+
+    .logo-txt {
+        font-size: .85rem;
+    }
+
+    .nav-links-container {
+        align-items: center;
+        display: flex;
+        gap: 2em;
+        margin-left: auto;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
     .hero {
         height: 30.5em;
     }
