@@ -1,6 +1,7 @@
 //////////////////////////////
 //    VARIABLES
 //////////////////////////////
+
 import { articles } from "/data.js"
 const postContainer = document.querySelector('.posts-container');
 const posts = postContainer.children;
@@ -11,14 +12,15 @@ const sortedArticles = filteredArticles.sort((a, b) => {
     const bDate = new Date(b.date);
     return aDate < bDate
 });
-let darkmode = false;
+const nav = document.querySelector("nav");
+let darkmode = JSON.parse(localStorage.getItem("darkmode")) || false;
 
 //////////////////////////////
-//    CHECK USER PREF
+//    LOCAL STORAGE OR CHECK USER PREF FOR DARKMODE
 //////////////////////////////
-//window.matchMedia("(prefers-color-scheme:dark)").matches
-if (localStorage.getItem("darkmode")) {
-    darkmode = JSON.parse(localStorage.getItem("darkmode"));
+
+if (!localStorage.getItem("darkmode") && window.matchMedia("(prefers-color-scheme:dark)").matches) {
+    darkmode = true;
 }
 
 if (darkmode) {
@@ -28,6 +30,7 @@ if (darkmode) {
 //////////////////////////////
 //    RENDER RECENT POSTS
 //////////////////////////////
+
 postContainer.innerHTML = sortedArticles.map(article => {
     const date = new Date(`${article.date}`).toISOString().split("T")[0];
     return `
@@ -46,6 +49,7 @@ postContainer.innerHTML = sortedArticles.map(article => {
 //////////////////////////////
 //    HIDE LAST POSTS
 //////////////////////////////
+
 hideLastPosts();
 
 //////////////////////////////
@@ -56,7 +60,7 @@ function handleClick(e) {
     if (e.target.id === "toggle-darkmode-btn") {
         toggleDarkMode();
     } else if (e.target.id === "menu-btn") {
-        document.querySelector("nav").classList.toggle("show-menu");
+        nav.classList.toggle("show-menu");
     } else if (e.target.id === "view-more-btn") {
         toggleHiddenPosts();
     }
@@ -82,15 +86,16 @@ function toggleDarkMode() {
     localStorage.setItem("darkmode", `${darkmode}`);
 }
 
-function updateLocalStorage() {
-    // if (!localStorage.getItem("darkmode")) {
-    //     localStorage.setItem("darkmode", `${darkmode}`)
-    // }else{
-
-    // }
+function handleWidthChange() {
+    if (document.body.clientWidth > 1019 && nav.classList.contains("show-menu")) {
+        nav.classList.remove("show-menu");
+    }
 }
+
 //////////////////////////////
 //    EVENT LISTENER
 //////////////////////////////
 
 document.addEventListener("click", handleClick);
+
+window.addEventListener("resize", handleWidthChange)
